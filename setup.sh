@@ -6,7 +6,8 @@ sudo apt-get -y update
 sudo apt-get -y install fish tmux exa neovim python3-neovim
 
 # Install fish theme
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /tmp/omf_install
+fish /tmp/omf_install --path=~/.local/share/omf --config=~/.config/omf
 fish -c "omf install bobthefish"
 
 # Fish config

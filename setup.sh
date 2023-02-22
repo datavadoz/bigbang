@@ -5,9 +5,11 @@ sudo apt upgrade
 sudo apt-get -y update
 sudo apt-get -y install fish tmux exa neovim python3-neovim
 
-# Fish config
-/usr/bin/fish -c "echo \"Hello, world!\""
+# Install fish theme
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+fish -c "omf install bobthefish"
 
+# Fish config
 tee $HOME/.config/fish/config.fish << END
 set -U fish_greeting ""
 

@@ -29,6 +29,12 @@ if status is-interactive
 end
 END
 
+# Install Miniconda and initilize it
+curl https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-Linux-x86_64.sh > /tmp/miniconda.sh
+bash /tmp/miniconda.sh -b -u -p $HOME/miniconda3
+$HOME/miniconda3/bin/conda init fish 
+$HOME/miniconda3/bin/conda config --set env_prompt ""
+
 # Set fish as default shell
 chsh -s /usr/bin/fish
 

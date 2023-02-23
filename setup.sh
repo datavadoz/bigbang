@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Install everyday packages
+sudo add-apt-repository -y ppa:fish-shell/release-3
 sudo apt-get -y update
 sudo apt-get -y install fish tmux exa neovim python3-neovim
 

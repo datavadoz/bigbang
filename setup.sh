@@ -3,7 +3,7 @@
 # Install everyday packages
 sudo add-apt-repository -y ppa:fish-shell/release-3
 sudo apt-get -y update
-sudo apt-get -y install fish tmux exa neovim python3-neovim
+sudo apt-get -y install fish tmux exa neovim python3-neovim build-essential
 
 # Install fish theme
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /tmp/omf_install
@@ -28,6 +28,8 @@ if status is-interactive
     set -g theme_date_format "+%a %d/%m/%y %H:%M:%S"
     set -g theme_nerd_fonts yes
 end
+
+set -Ua fish_user_paths \$HOME/.cargo/bin
 END
 
 # Install Miniconda and initilize it
@@ -50,3 +52,6 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+# Install Rust
+curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
